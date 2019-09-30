@@ -1,5 +1,7 @@
 package xo.model;
 
+import xo.model.exceptions.*;
+
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
@@ -15,15 +17,17 @@ class BoardTest {
     }
 
     @Test
-    void setFigure() {
+    void setFigure() throws InvalidPointException {
         final Board board = new Board();
         final Point point = new Point(0, 0);
         final Figure figure = Figure.X;
 
-        board.setFigure(point, figure);
+        try {board.setFigure(point, figure);}
+        catch (InvalidPointException e) {}
 
         Figure expectedValue = figure;
         Figure actualValue = board.getFigure(point);
+
         assertEquals(expectedValue, actualValue);
     }
 }
