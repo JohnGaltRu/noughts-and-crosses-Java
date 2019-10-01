@@ -19,7 +19,7 @@ class BoardTest {
     @Test
     void setFigure() throws InvalidPointException {
         final Board board = new Board();
-        final Point point = new Point(0, 0);
+        final Point point = new Point(2, 1);
         final Figure figure = Figure.X;
 
         try {board.setFigure(point, figure);}

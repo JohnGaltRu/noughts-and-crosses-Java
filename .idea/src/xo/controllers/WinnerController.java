@@ -17,7 +17,7 @@ public class WinnerController {
             }
             for (int i = 0; i < 3; i++) {
                 if (checkWinner(board, new Point(0, i), new Point(1, i), new Point(2, i))) {
-                    return board.getFigure(new Point(i, 0));
+                    return board.getFigure(new Point(0, i));
                 }
             }
             if (checkWinner(board, new Point(0, 0), new Point(1, 1), new Point(2, 2))) {
@@ -28,11 +28,11 @@ public class WinnerController {
             }
         }
         catch (InvalidPointException e) {}
-        catch (NoWinnerException e) {}
+        //catch (NoWinnerException e) {}
         return null;
     };
-    private boolean checkWinner(final Board board, final Point p1, final  Point p2, final  Point p3) throws NoWinnerException, InvalidPointException{
-        if (board.getFigure(p1) == null) { throw new NoWinnerException();};
+    private boolean checkWinner(final Board board, final Point p1, final  Point p2, final  Point p3) throws InvalidPointException{
+        if (board.getFigure(p1) == null) { return  false;};
         if (board.getFigure(p1) == board.getFigure(p2) && board.getFigure(p1) == board.getFigure(p3)) {return true;}
         return false;
     }
