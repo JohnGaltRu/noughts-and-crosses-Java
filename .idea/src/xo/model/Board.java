@@ -4,7 +4,7 @@ import java.awt.*;
 import xo.model.exceptions.*;
 
 public class Board {
-    final static int fieldSize = 3;
+    public final static int fieldSize = 3;
     private final Figure field[][] = new Figure[fieldSize][fieldSize];
 
     public int getFieldSize() {
