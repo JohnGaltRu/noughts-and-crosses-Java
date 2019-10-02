@@ -5,7 +5,7 @@ import xo.model.exceptions.*;
 
 public class Board {
     public final static int fieldSize = 3;
-    private final Figure field[][] = new Figure[fieldSize][fieldSize];
+    public final Figure field[][] = new Figure[fieldSize][fieldSize]; //private
 
     public int getFieldSize() {
         return fieldSize;
@@ -13,12 +13,12 @@ public class Board {
 
     public Figure getFigure(final Point point) throws InvalidPointException{
         if (!checkCoordinate(point)) {throw new InvalidPointException();}
-        return field[point.x][point.y];
+        return field[point.y][point.x];
     }
 
     public void setFigure(final Point point, final Figure figure) throws InvalidPointException {
         if (!checkCoordinate(point)) {throw new InvalidPointException();}
-        field[point.x][point.y] = figure;
+        field[point.y][point.x] = figure;
 
     }
 

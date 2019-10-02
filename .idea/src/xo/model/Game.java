@@ -5,15 +5,15 @@ import java.util.Arrays;
 
 public class Game {
     private Player players[];
-    final private Field field;
-    final static String gameName = "XO";
+    final private Board board;
+    final static String gameName = "Welcome to XO!";
 
-    public Game(Field field, Player players[]) {
+    public Game(Board board, Player players[]) {
         this.players = players;
-        this.field = field;
+        this.board = board;
     }
 
-    //public String getPlayers(Player players) { return Arrays.toString(players);};
-    public Field getField(Field field) { return field;};
-    public String getGameName() {return gameName;};
+    public Player[] getPlayers() { return players;};
+    public Board getField() { return board;}; // naxera ne poimy
+    public static String getGameName() {return gameName;};
 }
