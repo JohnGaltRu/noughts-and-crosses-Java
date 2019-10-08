@@ -11,9 +11,9 @@ public class XOCLI {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter first player name:");
-        final String name1 = scanner.nextLine();
+        String name1 = scanner.nextLine();
         System.out.println("Please enter second player name:");
-        final String name2 = scanner.nextLine();
+        String name2 = scanner.nextLine();
 
         System.out.println("Hello " + name1 + ", " + name2 + "!");
 
@@ -29,5 +29,4 @@ public class XOCLI {
             consoleView.show(game);
         }
     }
-
 }

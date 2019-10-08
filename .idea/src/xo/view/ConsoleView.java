@@ -56,8 +56,8 @@ public class ConsoleView {
 
         String player1 = game.getPlayers()[0].getName();
         String player2 = game.getPlayers()[1].getName();
-        if (currentFigure == Figure.X) {System.out.println(player1 + ", please enter your move point");};
-        if (currentFigure == Figure.O) {System.out.println(player2 + ", please enter your move point");};
+        if (currentFigure == Figure.X) {System.out.println(player1 + ", please enter your move point (starts from 0)");};
+        if (currentFigure == Figure.O) {System.out.println(player2 + ", please enter your move point (starts from 0)");};
 
         final Point point = new Point(askCoordinate("column"), askCoordinate("row"));
         try {
@@ -65,7 +65,6 @@ public class ConsoleView {
         } catch (final InvalidPointException | AlreadyOccupiedException e) {
             System.out.println("Point is invalid!");
         }
-        System.out.println(Arrays.deepToString(game.getField().field)); //dsfsdfsdfsdf
         return true;
     }
 
@@ -75,7 +74,7 @@ public class ConsoleView {
         try {
             return in.nextInt();
         } catch (final InputMismatchException e) {
-            System.out.println("Please enter a number");
+            System.out.println("Please enter a positve number");
             return askCoordinate(coordinateName);
         }
     }
